@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>KSeF bez bólu – zewnętrzna obsługa KSeF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      margin:0;
+      background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%) fixed;
+      background-size: cover;
+      color:#222;
+    }
+    header, section, footer { padding: 48px 10%; }
+    header { background: linear-gradient(135deg, #0a6cff, #0b3c91); color:#fff; }
+    h1 { font-size: 2.4em; margin-bottom: 0.4em; }
+    h2 { margin-top: 0; }
+    .cta { display:inline-block; padding:12px 24px; background:#0a6cff; color:#fff; text-decoration:none; border-radius:6px; }
+    .grid { display:grid; gap:24px; }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+    .card { background:#fff; padding:24px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,.05); }
+    nav { display:flex; justify-content:space-between; align-items:center; }
+    nav a { color:#fff; margin-left:12px; text-decoration:none; }
+    footer { background:#eee; font-size:0.9em; }
+    .lang button {
+      margin-left: 6px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #0a6cff 0%, #6ee7ff 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(10,108,255,0.15);
+      padding: 8px 18px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+      outline: none;
+    }
+    .lang button:hover, .lang button:focus {
+      background: linear-gradient(135deg, #0b3c91 0%, #38bdf8 100%);
+      box-shadow: 0 4px 16px rgba(10,108,255,0.25);
+      transform: translateY(-2px) scale(1.04);
+    }
+
+    .section {
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 32px 24px;
+      max-width: 420px;
+      margin: 40px auto;
+    }
+    .section h2 {
+      margin-bottom: 18px;
+      font-size: 1.5em;
+    }
+    .section form input,
+    .section form textarea {
+      width: 100%;
+      margin-bottom: 14px;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    .section form button {
+      background: #0a6cff;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+      display: block;
+      margin-left: 10px;
+    }
+    .section form button:hover {
+      background: #0b3c91;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <strong>KSeF bez bólu</strong>
+    <div class="lang">
+      <button onclick="setLang('pl')">PL</button>
+      <button onclick="setLang('ua')">UA</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
+  </nav>
+  <h1 data-i18n="hero_title">KSeF — spokój i pewność dla Twojego biura</h1>
+  <p data-i18n="hero_text">Zewnętrzna obsługa KSeF 2.0. Bez stresu, bez chaosu, bez problemów.</p>
+  <a class="cta" href="#contact" data-i18n="cta">Skontaktuj się</a>
+</header>
+
+<section>
+  <h2 data-i18n="what_title">Co robimy</h2>
+  <div class="grid grid-3">
+    <div class="card" data-i18n="what1">Integrujemy Twoje systemy z KSeF – niezależnie od formatu faktur.</div>
+    <div class="card" data-i18n="what2">Obsługujemy błędy i nietypowe przypadki zamiast księgowych.</div>
+    <div class="card" data-i18n="what3">Zapewniamy raporty, statusy i długoterminowe wsparcie.</div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="for_title">Dla kogo</h2>
+  <div class="card" style="margin-bottom:32px;" data-i18n="pitch_accountants">
+    Dla biur rachunkowych:\nNie konkurujemy z wFirma, enova ani innymi systemami księgowymi. Przejmujemy wyłącznie nietypowe i problematyczne przypadki KSeF: klientów z własnymi systemami, błędy, duże wolumeny faktur. Dzięki temu biuro rachunkowe nie musi pełnić roli wsparcia IT.
+  </div>
+  <div class="grid grid-3">
+    <div class="card" data-i18n="for1">Biura rachunkowe z klientami używającymi własnych systemów.</div>
+    <div class="card" data-i18n="for2">SaaS / ERP / CRM potrzebujące stabilnej integracji KSeF.</div>
+    <div class="card" data-i18n="for3">Firmy z dużą liczbą faktur i automatyzacją.</div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="how_title">Jak to działa</h2>
+  <ol>
+    <li data-i18n="how1">Klient wysyła fakturę w prostym formacie.</li>
+    <li data-i18n="how2">My konwertujemy i wysyłamy ją do KSeF.</li>
+    <li data-i18n="how3">Zwracamy status, numer KSeF i raport.</li>
+    <li data-i18n="how4">Zapewniamy ciągłe wsparcie i reakcję na zmiany.</li>
+  </ol>
+</section>
+
+<section>
+  <h2 data-i18n="try_title">Sprawdź KSeF bez zobowiązań</h2>
+  <p data-i18n="try_text">Możesz przesłać przykładowy dokument (PDF, JSON, CSV lub inny format). Nie obiecujemy automatyki — sprawdzamy, czy integracja z KSeF ma sens i jak ją zrobić poprawnie.</p>
+  <input type="file" disabled style="margin:12px 0;" />
+  <p style="font-size:0.9em; opacity:0.7;" data-i18n="try_note">Przesłanie pliku ma charakter demonstracyjny — dalsza obsługa po kontakcie.</p>
+</section>
+
+<div class="section">
+  <h2 id="feedbackHeading" data-i18n="feedback_title">Feedback</h2>
+  <form>
+    <input type="text" id="nameField" data-i18n-placeholder="feedback_name" required>
+    <input type="email" id="emailField" data-i18n-placeholder="feedback_email" required>
+    <textarea id="messageField" rows="5" data-i18n-placeholder="feedback_message" required></textarea>
+    <button type="submit" id="sendButton" data-i18n="feedback_send">Send</button>
+  </form>
+</div>
+
+<section id="contact">
+  <h2 data-i18n="contact_title">Kontakt</h2>
+  <p data-i18n="contact_text">Napisz, a porozmawiamy bez zobowiązań.</p>
+  <p>Email: <strong>silver.service.pl@gmail.com</strong><br/>
+    <a href="https://t.me/SilverService_com_pl" target="_blank" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:inherit;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width:1em;height:1em;vertical-align:middle;"> Telegram
+    </a>
+  </p>
+</section>
+
+<footer>
+  <p>© Silver Service / KSeF support</p>
+</footer>
+
+<script>
+const dict = {
+  pl:{
+    hero_title:"KSeF — spokój i pewność dla Twojego biura", hero_text:"Zewnętrzna obsługa KSeF 2.0. Bez stresu, bez chaosu, bez problemów.", cta:"Skontaktuj się", what_title:"Co robimy", what1:"Integrujemy Twoje systemy z KSeF – niezależnie od formatu faktur.", what2:"Obsługujemy błędy i nietypowe przypadki zamiast księgowych.", what3:"Zapewniamy raporty, statusy i długoterminowe wsparcie.", for_title:"Dla kogo", for1:"Biura rachunkowe z klientami używającymi własnych systemów.", for2:"SaaS / ERP / CRM potrzebujące stabilnej integracji KSeF.", for3:"Firmy z dużą liczbą faktur i automatyzacją.", pitch_accountants:"Dla biur rachunkowych:\nNie konkurujemy z wFirma, enova ani innymi systemami księgowymi. Przejmujemy wyłącznie nietypowe i problematyczne przypadki KSeF: klientów z własnymi systemami, błędy, duże wolumeny faktur. Dzięki temu biuro rachunkowe nie musi pełnić roli wsparcia IT.", how_title:"Jak to działa", how1:"Klient wysyła fakturę w prostym formacie.", how2:"My konwertujemy i wysyłamy ją do KSeF.", how3:"Zwracamy status, numer KSeF i raport.", how4:"Zapewniamy ciągłe wsparcie i reakcję na zmiany.", try_title:"Sprawdź KSeF bez zobowiązań", try_text:"Możesz przesłać przykładowy dokument (PDF, JSON, CSV lub inny format). Nie obiecujemy automatyki — sprawdzamy, czy integracja z KSeF ma sens i jak ją zrobić poprawnie.", try_note:"Przesłanie pliku ma charakter demonstracyjny — dalsza obsługa po kontakcie.", contact_title:"Kontakt", contact_text:"Napisz, a porozmawiamy bez zobowiązań.",
+    feedback_title:"Informacja zwrotna",
+    feedback_name:"Twoje imię",
+    feedback_email:"Twój email",
+    feedback_message:"Twoja wiadomość",
+    feedback_send:"Wyślij"
+  },
+  ua:{
+    hero_title:"KSeF без болю для вашої бухгалтерії", hero_text:"Ми беремо на себе всю роботу з KSeF 2.0.", cta:"Звʼязатися", what_title:"Що ми робимо", what1:"Інтегруємо ваші системи з KSeF.", what2:"Обробляємо помилки замість бухгалтера.", what3:"Надаємо статуси та підтримку.", for_title:"Для кого", for1:"Бухгалтерські бюро з нестандартними клієнтами.", for2:"SaaS / ERP / CRM.", for3:"Компанії з автоматизацією.", pitch_accountants:"Для бухгалтерських бюро:\nМи не конкуруємо з wFirma, enova чи іншими бухгалтерськими системами. Ми беремо лише нетипові та проблемні випадки KSeF: клієнтів із власними системами, помилки, великі обсяги рахунків. Завдяки цьому бухгалтерія не повинна виконувати роль IT-підтримки.", how_title:"Як це працює", how1:"Ви надсилаєте документ.", how2:"Ми відправляємо його до KSeF.", how3:"Повертаємо результат.", how4:"Підтримуємо постійно.", try_title:"Перевірте KSeF без зобовʼязань", try_text:"Ви можете надіслати приклад документа (PDF, JSON, CSV або інший формат). Ми оцінюємо доцільність та можливість інтеграції з KSeF.", try_note:"Надсилання файлу має демонстраційний характер — подальша робота після контакту.", contact_title:"Контакт", contact_text:"Напишіть нам.",
+    feedback_title:"Зворотний зв'язок",
+    feedback_name:"Ваше ім'я",
+    feedback_email:"Ваш email",
+    feedback_message:"Ваше повідомлення",
+    feedback_send:"Відправити"
+  },
+  en:{
+    hero_title:"KSeF without headaches", hero_text:"We take full responsibility for KSeF 2.0 integration.", cta:"Contact us", what_title:"What we do", what1:"We integrate your systems with KSeF.", what2:"We handle errors and edge cases.", what3:"We provide reporting and support.", for_title:"Who it is for", for1:"Accounting offices.", for2:"SaaS / ERP / CRM.", for3:"Automated companies.", pitch_accountants:"For accounting offices:\nWe do not compete with wFirma, enova or other accounting systems. We only handle unusual and problematic KSeF cases: clients with their own systems, errors, large invoice volumes. This way, the accounting office does not have to act as IT support.", how_title:"How it works", how1:"You send a sample document.", how2:"We submit it to KSeF.", how3:"We return the result.", how4:"We provide ongoing support.", try_title:"Test KSeF with no obligation", try_text:"You can upload a sample document (PDF, JSON, CSV or other format). We assess feasibility, not promise automation.", try_note:"File upload is demonstrational — further handling after contact.", contact_title:"Contact", contact_text:"Get in touch.",
+    feedback_title:"Feedback",
+    feedback_name:"Your Name",
+    feedback_email:"Your Email",
+    feedback_message:"Your Message",
+    feedback_send:"Send"
+  }
+};
+function setLang(l){
+  document.querySelectorAll('[data-i18n]').forEach(e=>{
+    if(dict[l][e.dataset.i18n]) e.textContent = dict[l][e.dataset.i18n];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(e=>{
+    if(dict[l][e.dataset.i18nPlaceholder]) e.placeholder = dict[l][e.dataset.i18nPlaceholder];
+  });
+  document.documentElement.lang = l;
+}
+
+// Apply language on initial load
+window.addEventListener('DOMContentLoaded', function() {
+  setLang(document.documentElement.lang || 'pl');
+});
+</script>
+</script>
+<script src="modals.js"></script>
+</body>
+</html>
