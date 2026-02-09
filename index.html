@@ -45,7 +45,7 @@
     }
 
     .section {
-      background: rgba(255,255,255,0.85);
+      background: #f3f6fb; /* slightly lighter than main bg, not pure white */
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       padding: 32px 24px;
@@ -60,10 +60,11 @@
     .section form textarea {
       width: 100%;
       margin-bottom: 14px;
-      padding: 10px;
+      padding: 10px 16px; /* equal left/right padding */
       border: 1px solid #bbb;
       border-radius: 6px;
       font-size: 1em;
+      box-sizing: border-box;
     }
     .section form button {
       background: #0a6cff;
